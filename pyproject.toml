@@ -9,7 +9,7 @@ description = "MCP server to inspect and manage FortiOS firewalls over the REST 
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "ratno" }]
+authors = [{ name = "ratnoub" }]
 keywords = ["mcp", "model-context-protocol", "fortigate", "fortios", "fastmcp", "firewall"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -29,8 +29,8 @@ dependencies = [
 mcp-fortigate = "mcp_fortigate.server:run"
 
 [project.urls]
-Homepage = "https://github.com/ratno/mcp-fortigate"
-Issues = "https://github.com/ratno/mcp-fortigate/issues"
+Homepage = "https://github.com/ratnoub/mcp-fortigate"
+Issues = "https://github.com/ratnoub/mcp-fortigate/issues"
 
 [tool.setuptools.packages.find]
 include = ["mcp_fortigate*"]
