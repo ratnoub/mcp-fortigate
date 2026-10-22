@@ -30,7 +30,7 @@ run in the foreground or detached in the background (`--daemon`).
 ### With pipx (recommended)
 
 ```bash
-pipx install git+https://github.com/<you>/mcp-fortigate.git
+pipx install git+https://github.com/ratnoub/mcp-fortigate.git
 # or from a local clone / sdist:
 pipx install .
 ```
@@ -66,9 +66,10 @@ server:
   port: 5752
 
 fortigate:
-  FORTIGATE_HOST: 172.18.7.14
+  FORTIGATE_HOST: 192.68.7.4
   FORTIGATE_API_TOKEN: <your-api-token>
   FORTIGATE_READ_ONLY: true
+  FORTIGATE_VERIFY_SSL: false
 ```
 
 Every key under a section is exported as an environment variable of the same name,
