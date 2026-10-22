@@ -1,0 +1,43 @@
+# mcp-fortigate configuration.
+#
+# Copy this file to `config.yaml` and fill in your values:
+#     copy config.example.yaml config.yaml        (Windows)
+#     cp config.example.yaml config.yaml          (Linux/macOS)
+#
+# Then run:
+#     mcp-fortigate --config config.yaml
+#
+# Every key under a section is exported as an environment variable of the same
+# name, so the section names are just for organisation. `config.yaml` contains
+# secrets (the API token) and is git-ignored; never commit it.
+
+server:
+  host: 0.0.0.0        # address the HTTP server binds to
+  port: 5752           # port; clients connect to http://<ip>:5752/mcp
+
+fortigate:
+  FORTIGATE_HOST: 172.18.7.14
+  # FORTIGATE_PORT: 443
+  # Use an API token (recommended) ...
+  FORTIGATE_API_TOKEN: <your-api-token>
+  # ... or a username/password session instead of a token:
+  # FORTIGATE_USERNAME: admin
+  # FORTIGATE_PASSWORD: <password>
+  # FORTIGATE_VDOM: root
+  # FORTIGATE_VERIFY_SSL: true     # true | false | /path/to/ca-bundle.pem
+  FORTIGATE_READ_ONLY: true        # block all writes (POST/PUT/DELETE); GET only
+  # FORTIGATE_TIMEOUT: 30
+
+# Optional: enable the Kubernetes tools (k8s_cluster_overview, k8s_sync_*).
+# k8s:
+#   K8S_KUBECONFIG: ~/.kube/config
+#   K8S_CONTEXT: default
+
+# Optional: enable the Proxmox tools (identify_clients) and VM labelling.
+# proxmox:
+#   PROXMOX_HOST: pve.example.com
+#   PROXMOX_PORT: 8006
+#   PROXMOX_USER: mcp
+#   PROXMOX_TOKEN_NAME: mcp
+#   PROXMOX_TOKEN_VALUE: <token-value>
+#   PROXMOX_VERIFY_SSL: true
